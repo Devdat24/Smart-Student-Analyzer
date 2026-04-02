@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    <h3>🎓 Student Analytics</h3>
+    <div>
+        <a href="/">Home</a>
+        <a href="/predict-page">Predict</a>
+        <a href="/about">About</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>🚀 Welcome to Student Performance System</h2>
+    
+    <p style="margin-top:15px; font-size:14px;">
+        This intelligent system analyzes student data and predicts academic performance using Machine Learning.
+    </p>
+
+    <br>
+
+    <a href="/predict-page">
+        <button>Start Prediction</button>
+    </a>
+</div>
+
+</body>
+</html>
