@@ -100,30 +100,38 @@ git clone https://github.com/your-username/eduinsight.git
 cd eduinsight
 ```
 ### 2. Install dependencies
+```
 pip install -r requirements.txt
+```
 ### 3. Train the model
+```
 python model.py
+```
 ### 4. Run the application
+```
 python app.py
+```
 ### 5. Open in browser
+```
 http://127.0.0.1:5000
+```
 
 ### 🔐 Authentication
-Users can register and login
-Session-based authentication
-Prediction history is stored per user
+- Users can register and login
+- Session-based authentication
+- Prediction history is stored per user
 
 ### ⚠️ Important Notes
-Dataset preprocessing is handled separately
-Feature alignment is maintained using one-hot encoding
-Data leakage (e.g., final_exam_score) has been removed for realistic predictions
+- Dataset preprocessing is handled separately
+- Feature alignment is maintained using one-hot encoding
+- Data leakage (e.g., final_exam_score) has been removed for realistic predictions
 
 ### 💡 Future Enhancements
-🔒 Password hashing & security improvements
-📄 Export prediction reports (PDF)
-☁️ Deployment on cloud (Render / Railway)
-📱 Mobile responsiveness improvements
-🤖 Explainable AI (feature importance visualization)
+- 🔒 Password hashing & security improvements
+- 📄 Export prediction reports (PDF)
+- ☁️ Deployment on cloud (Render / Railway)
+- 📱 Mobile responsiveness improvements
+- 🤖 Explainable AI (feature importance visualization)
 
 ### 🧑‍💻 Author
 
