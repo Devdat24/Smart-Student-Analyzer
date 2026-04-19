@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #333;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.2);
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 55px;
+    animation: slideUp 1s ease;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+@keyframes slideUp {
+    from {transform: translateY(40px); opacity:0;}
+    to {transform: translateY(0); opacity:1;}
+}
+
+.btn {
+    padding: 12px 22px;
+    margin: 10px;
+    background: white;
+    color: #667eea;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #eee;
+    transform: scale(1.05);
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    color: white;
+}
+
+.lr { background: #4CAF50; }
+.dt { background: #FF9800; }
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.back-btn {
+    margin-top: 20px;
+    display: inline-block;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.auth-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    color: white;
+    text-align: center;
+    animation: slideUp 0.8s ease;
+}
+
+.auth-card h1 {
+    margin-bottom: 20px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #667eea;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-card button:hover {
+    transform: scale(1.05);
+    background: #eee;
+}
+
+.auth-link {
+    margin-top: 15px;
+    display: block;
+    color: white;
+    text-decoration: underline;
+}
+
+.error {
+    background: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.loader {
+    display: none;
+    margin-top: 10px;
+}
+
+.loader div {
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loader div:nth-child(2) { animation-delay: -0.16s; }
+.loader div:nth-child(3) { animation-delay: -0.32s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}

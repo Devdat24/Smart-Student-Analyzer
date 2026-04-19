@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-
-<body>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <div class="navbar">
-    <h3>🎓 Student Analytics</h3>
+    <h2>EduInsight</h2>
     <div>
-        <a href="/">Home</a>
-        <a href="/predict-page">Predict</a>
+        <a href="/dashboard">Dashboard</a>
         <a href="/about">About</a>
+        <a href="/form">Try Prediction</a>
+        <a href="/history">History</a>
     </div>
 </div>
 
-<div class="container">
-    <h2>🚀 Welcome to Student Performance System</h2>
-    
-    <p style="margin-top:15px; font-size:14px;">
-        This intelligent system analyzes student data and predicts academic performance using Machine Learning.
-    </p>
+<div class="hero">
+    <h1>EduInsight</h1>
+    <p>Smart Student Performance Analyzer powered by Machine Learning</p>
 
-    <br>
-
-    <a href="/predict-page">
-        <button>Start Prediction</button>
-    </a>
+    <a href="/form" class="btn">Start Analysis</a>
+    <a href="/dashboard" class="btn">View Dashboard</a>
+    <a href="/about" class="btn">Learn More</a>
 </div>
-
-</body>
-</html>

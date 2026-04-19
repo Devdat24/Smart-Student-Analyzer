@@ -1,21 +1,19 @@
-<div class="navbar">
-    <h3>🎓 Student Analytics</h3>
-    <div>
-        <a href="/">Home</a>
-        <a href="/predict-page">Predict</a>
-        <a href="/about">About</a>
-    </div>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container">
+
+<h1>Model Performance Dashboard</h1>
+
+<div class="card lr">
+    Logistic Regression Accuracy: {{ lr }}
 </div>
 
-<body>
-    <div class="container">
-        <h2>Prediction Result</h2>
+<div class="card dt">
+    Decision Tree Accuracy: {{ dt }}
+</div>
 
-        <div class="result">
-            Predicted Final Score: <span>{{ prediction }}</span>
-        </div>
+<img src="{{ url_for('static', filename='accuracy.png') }}">
 
-        <br>
-        <a href="/">Go Back</a>
-    </div>
-</body>
+<a href="/" class="back-btn">⬅ Back to Home</a>
+
+</div>

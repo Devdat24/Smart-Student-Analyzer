@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="auth-container">
+    <div class="auth-card">
+
+        <h1>Create Account</h1>
+        <p>Join EduInsight</p>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" onsubmit="showLoader()">
+
+            <input type="text" name="username" placeholder="Username" required>
+
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <input type="checkbox" onclick="togglePassword()"> Show Password
+
+            <button type="submit">Register</button>
+
+            <div class="loader" id="loader">
+                <div></div><div></div><div></div>
+            </div>
+
+        </form>
+
+        <a href="/login" class="auth-link">Already have an account?</a>
+        <a href="/" class="auth-link">⬅ Back to Home</a>
+
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+function showLoader() {
+    document.getElementById("loader").style.display = "block";
+}
+</script>
+
+</body>
+</html>

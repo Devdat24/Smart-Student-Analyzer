@@ -1,40 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-
-<body>
-
-<div class="navbar">
-    <h3>🎓 Student Analytics</h3>
-    <div>
-        <a href="/">Home</a>
-        <a href="/predict-page">Predict</a>
-        <a href="/about">About</a>
-    </div>
-</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <div class="container">
-    <h2>📖 About This Project</h2>
 
-    <p style="margin-top:15px; font-size:14px; line-height:1.6;">
-        The Student Performance Analytics System is a machine learning-based web application designed to predict a student's final academic performance.
-        
-        It uses a real-world dataset and applies data preprocessing, regression modeling, and visualization techniques to generate accurate predictions.
+<h1>About ML Models We Have Trained</h1>
 
-        The system is built using Flask (backend), HTML/CSS (frontend), and SQLite (database), making it lightweight and efficient.
-    </p>
+<img src="{{ url_for('static', filename='logistic.png') }}">
 
-    <br>
+<p>
+Logistic Regression is a powerful classification algorithm used to estimate the probability of a student passing or failing based on input features such as attendance, study hours, and academic scores. It works using a sigmoid function that maps input data into a probability value between 0 and 1. This model is efficient, easy to interpret, and performs well when the relationship between variables is linear. It serves as a strong baseline model in our system. However, its limitation lies in handling complex non-linear relationships, which may reduce performance in more dynamic datasets.
+</p>
 
-    <h3>🔧 Technologies Used:</h3>
-    <p style="font-size:14px;">
-        Python, Flask, Scikit-learn, Pandas, SQLite, HTML, CSS
-    </p>
+<img src="{{ url_for('static', filename='tree.png') }}">
+
+<p>
+Decision Tree is a flexible machine learning model that splits data into branches based on feature conditions, forming a tree-like structure of decisions. It is highly effective in capturing non-linear relationships and interactions between variables such as study patterns and performance metrics. This makes it ideal for educational datasets where multiple factors influence outcomes. While Decision Trees are easy to visualize and interpret, they may overfit the data if not properly controlled. Combining it with Logistic Regression allows us to compare structured and probabilistic learning approaches effectively.
+</p>
+
+<a href="/" class="back-btn">⬅ Back to Home</a>
 
 </div>
-
-</body>
-</html>

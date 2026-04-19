@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Result</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Performance Result</h1>
+
+    <!-- Logistic Regression Card -->
+    <div class="card lr">
+        <h2>Logistic Regression</h2>
+        <p>Score: {{ lr_score }} / 10</p>
+
+        {% if lr_score < 4 %}
+            <p>Performance: Low 🔴</p>
+        {% elif lr_score < 7 %}
+            <p>Performance: Medium 🟡</p>
+        {% else %}
+            <p>Performance: High 🟢</p>
+        {% endif %}
+    </div>
+
+    <!-- Decision Tree Card -->
+    <div class="card dt">
+        <h2>Decision Tree</h2>
+        <p>Score: {{ dt_score }} / 10</p>
+
+        {% if dt_score < 4 %}
+            <p>Performance: Low 🔴</p>
+        {% elif dt_score < 7 %}
+            <p>Performance: Medium 🟡</p>
+        {% else %}
+            <p>Performance: High 🟢</p>
+        {% endif %}
+    </div>
+
+    <!-- Comparison Result -->
+    <div class="result-text">
+        {% if lr_score > dt_score %}
+            Logistic Regression predicts better performance 📈
+        {% elif dt_score > lr_score %}
+            Decision Tree predicts better performance 📊
+        {% else %}
+            Both models predict similar performance 🤝
+        {% endif %}
+    </div>
+
+    <!-- Chart -->
+    <canvas id="scoreChart" style="margin-top:30px;"></canvas>
+
+    <!-- Buttons -->
+    <br>
+    <a href="/form"><button>Try Again</button></a>
+    <br><br>
+    <a href="/history"><button>View History</button></a>
+
+</div>
+
+<script>
+const ctx = document.getElementById('scoreChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Logistic Regression', 'Decision Tree'],
+        datasets: [{
+            label: 'Performance Score',
+            data: [{{ lr_score }}, {{ dt_score }}],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        animation: {
+            duration: 1500
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 10
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
